@@ -14,6 +14,7 @@ urlpatterns = [
     path('', views.getall),
     path('product-list/',views.products),
     path('product/<str:pk>/',views.product),
+    path('test/',views.test)
     
     # path('product-list/',views.getProduct),
 ]

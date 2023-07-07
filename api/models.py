@@ -9,6 +9,7 @@ class Product(models.Model):
     price = models.CharField(max_length=20,default=0)
     discount = models.FloatField(default=0)
     inStock = models.BooleanField(default=False)
+    category = models.CharField(max_length=6, null=True)
     # completed = models.BooleanField(default=False,blank=True,null=True)
 
     def __str__(self):

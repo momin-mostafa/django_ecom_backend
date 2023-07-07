@@ -1,5 +1,4 @@
-# from django.shortcuts import render
-# from django.http import HttpResponse
+
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .models import Product
@@ -9,12 +8,14 @@ from .serializers import ProductSerializer
 @api_view(['GET'])
 def getall(request):
     api_urls = {
+        'status':200,
+        'data':{
 		'List':'/product-list/',
 		'Detail View':'/product/<str:pk>/',
 		'Create':'/product-list/',
 		'Update':'comming soon',
 		'Delete':'/product/<str:pk>/',
-		}
+		}}
     return Response(api_urls)
 
 @api_view(['GET','POST'])
@@ -50,3 +51,6 @@ def product(request,pk):
         return Response(f"Put Called on product {pk}. Comming soon")
     return Response('product')
 
+@api_view(['GET'])
+def test(request):
+    return Response("Hello World")
